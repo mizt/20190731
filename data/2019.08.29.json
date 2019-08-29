@@ -1,0 +1,13 @@
+[
+	{},
+	["p",{"class":"bold"},"2019.08.29"],
+	["p","8/31に行われるベルリンのライブは「メ芸新入生歓迎パーティー」のアップデート版で、いくつかの変更点がありますが、音楽ファイル（実際にはなんかしらのバイナリ）をドロップして読み込むための独自UIを廃止して、Dock上のアイコンへドロップするように変更した箇所が特に気に入っています。"],
+	["blockquote",{"class":"twitter-tweet"},
+			["p","Sa 31.8.19",["br"],"OPPRESS.pre",["br"],["br"],"Usage",["a",{"href":"https://t.co/DMGx2iVtZP"},"pic.twitter.com/DMGx2iVtZP"]],
+			"&mdash; mizt (@mizt_org) ",["a",{"href":"https://twitter.com/mizt_org/status/1164055662503927809?ref_src=twsrc%5Etfw"},"August 21, 2019"]],
+	["script","(function(){var tid=setInterval(function(){var tw=document.body.querySelector(\".twitter-tweet\");if(tw&&tw.id){var widget=document.querySelector(\"#\"+tw.id);if(widget&&widget.shadowRoot) {var text=widget.shadowRoot.querySelector(\".Tweet-text\");if(text){clearInterval(tid);text.style.fontFamily=\"'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','游ゴシック','Yu Gothic','メイリオ',Meiryo,Osaka,sans-serif\";text.style.fontSize=\"14px\";text.style.fontWeight=\"normal\";text.style.letterSpacing=\"0.15em\";text.style.lineHeight=\"24px\";}}}},100);}());"],
+	["script",{"async":"ture","src":"https://platform.twitter.com/widgets.js","charset":"utf-8"}],
+	["p","ドロップできるようにするためにはAppDelegateに",["code","application:openFile"],"と",["code","application:openFiles"],"のデリゲートを実装し、Info.plistに以下を追加します。（明示的に読み込む拡張子を設定する場合は*ではなくカンマ区切りで指定します）"],
+	["pre",{"class":"off"},["code","<key>CFBundleDocumentTypes</key>\n<array>\n\t<dict>\n\t\t<key>CFBundleTypeExtensions</key>\n\t\t<array>\n\t\t\t<string>*</string>\n\t\t</array>\n\t\t<key>CFBundleTypeRole</key>\n\t\t<string>Editor</string>\n\t</dict>\n</array>"]],
+	["p","気をつけないといけないのは、複数のファイルをドロップするときに",["code","application:openFiles"],"が複数回呼び出される場合があり",["a",{"href":"https://stackoverflow.com/questions/37623734/why-nsapplicationdelegate-method-openfiles-is-being-called-multiple-times-on-a"},"「Why NSApplicationDelegate method openFiles: is being called multiple times on a multiple drag to the dock icon?」"],"にも書かれているように、キューの処理を実装する必要があります。"]
+]
