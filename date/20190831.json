@@ -1,0 +1,10 @@
+[
+	["p",{"class":"title"},"20190831"],
+	["p","YouTubeを観ていたら、お薦めされた動画。"],
+	["div",{"style":"position:relative;width:100%;max-width:560px;margin-bottom:20px"},
+		["div",{"style":"width:100%;padding-bottom:56.25%;"},
+			["iframe",{"style":"position:absolute;top:0;left:0;width:100%;height:100%;","width":"560","height":"315","src":"https://www.youtube.com/embed/Fapt2yxHvJc","frameborder":"0","allow":"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture","allowfullscreen":""}]
+		]
+	],
+	["p","映像は",["a",{"href":"https://michaelrenassia.com/"},"Aï-Hz"],"。",["br"],"ゼロ年代前半っぽいCPUによる演算の感じが良い。",["br"],"使用しているソフトウエアは",["a",{"href":"https://vimeo.com/18388292"},"Dervish (Jitter)"],"？"]
+]
