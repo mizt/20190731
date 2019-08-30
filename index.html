@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 		<title>20190731</title>
 		<style>
-		
+
 			* {
 				margin:0; 
 				padding:0;
@@ -21,7 +21,7 @@
 				font-weight:normal;
 				font-size:14px;
 				line-height:26px;
-				padding:36px 0 30px 0;
+				padding:34px 0 32px 0;
 				word-wrap:break-word;
 				word-break:break-all;
 			}
@@ -35,11 +35,6 @@
 			img::selection, iframe::selection { background:rgba(0,0,0,0); }
 			img::-moz-selection, iframe::-moz-selection { background:rgba(0,0,0,0); }
 
-			.br:before {
-				content:"\A";
-				white-space:pre; 
-			}
-
 			p {
 				font-weight:normal;
 				font-size:14px;
@@ -52,29 +47,10 @@
 				font-feature-settings:"palt";
 				hanging-punctuation:last allow-end;
 			}
-				
+
 			a {
 				color:#00F;
 				text-decoration:none;
-			}
-			
-			video {
-				margin-bottom:16px;
-				vertical-align:bottom;
-				width:auto;
-				max-width:100%;
-			}
-				
-			pre {
-				line-height:20px;
-				margin-bottom:20px;
-				border-radius:2px;
-				padding:8px 12px;
-				background-color:#236;
-				tab-size:2;
-				white-space: pre;
-				word-wrap: break-word;
-				word-break: break-all;
 			}
 
 			#container {
@@ -84,25 +60,53 @@
 				max-width:1296px;
 				margin:0 auto 0 auto;
 			}
-	
-			img {
+
+			pre {
+				line-height:20px;
+				margin-bottom:18px;
+				border-radius:2px;
+				padding:8px 12px;
+				background-color:#236;
+				tab-size:2;
+				white-space: pre;
+				word-wrap: break-word;
+				word-break: break-all;
+			}
+
+			video {
+				margin-bottom:18px;
+				vertical-align:bottom;
 				width:auto;
 				max-width:100%;
 			}
 			
-			div#archive {
-				margin-top:32px;
+			img {
+				margin-bottom:18px;
+				vertical-align:bottom;
+				width:auto;
+				max-width:100%;
 			}
 
 			p.title {
-				margin-bottom:24px;
+				margin-bottom:26px;
 				font-weight:bold;
+			}
+
+			div#archive {
+				margin-top:14px;
+			}
+
+			pre + div#archive {
+				margin-top:30px;
+			}
+
+			p + div#archive {
+				margin-top:24px;
 			}
 
 			#archive a {
 				color:#000;
 				margin-right:8px;
-				margin-bottom:6px;
 				border-radius:4px;
 				font-size:12px;
 				line-height:16px;
@@ -110,23 +114,14 @@
 				display:inline-block;
 				background-color:#CCC;
 			}
-			
-			.bold {
-				font-weight:bold;
-			}
-			
-			.twitter-tweet {
-				margin-top:0px !important;
-				margin-bottom:18px !important;
-			}
-			
+
 			code {
 				font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
 				font-size:13px;
 				line-height:inherit;
 				color:#FFF;
 			}
-						
+
 			p > code {
 				vertical-align:1px;
 				border-radius:2px;
@@ -136,24 +131,28 @@
 				margin:0 2px 0 0px;
 				border-radius:2px;
 			}
-						
+
+			.twitter-tweet {
+				margin-top:0px !important;
+				margin-bottom:20px !important;
+			}
+
 		</style>
 	</head>
 	<body>
 		<script>
-			
+
 			// https://github.com/KoryNunn/crel
 			!function(e,n){"object"==typeof exports?module.exports=n():"function"==typeof define&&define.amd?define(n):e.crel=n()}(this,function(){function e(){var o,a=arguments,p=a[0],m=a[1],x=2,v=a.length,b=e[f];if(p=e[c](p)?p:d.createElement(p),1===v)return p;if((!l(m,t)||e[u](m)||s(m))&&(--x,m=null),v-x===1&&l(a[x],"string")&&void 0!==p[r])p[r]=a[x];else for(;v>x;++x)if(o=a[x],null!=o)if(s(o))for(var g=0;g<o.length;++g)y(p,o[g]);else y(p,o);for(var h in m)if(b[h]){var N=b[h];typeof N===n?N(p,m[h]):p[i](N,m[h])}else p[i](h,m[h]);return p}var n="function",t="object",o="nodeType",r="textContent",i="setAttribute",f="attrMap",u="isNode",c="isElement",d=typeof document===t?document:{},l=function(e,n){return typeof e===n},a=typeof Node===n?function(e){return e instanceof Node}:function(e){return e&&l(e,t)&&o in e&&l(e.ownerDocument,t)},p=function(n){return e[u](n)&&1===n[o]},s=function(e){return e instanceof Array},y=function(n,t){e[u](t)||(t=d.createTextNode(t)),n.appendChild(t)};return e[f]={},e[c]=p,e[u]=a,"undefined"!=typeof Proxy&&(e.proxy=new Proxy(e,{get:function(n,t){return!(t in e)&&(e[t]=e.bind(null,t)),e[t]}})),e});
-				
+
 			var time = (Date.now());
-			var container;
 			var list;
 			var target;
-			
+
 			var query = function() {
 				var arr = (window.location.search.substring(1)).split("&");
 				var tmp = null;
-				for(var i=0;i<arr.length;i++) {
+				for(var i=0; i<arr.length; i++) {
 					var pair = arr[i].split("=");
 					if(pair[0]=="uid") {
 						tmp = pair[1];
@@ -162,66 +161,75 @@
 				}
 				return tmp;
 			}
-			
-			window.addEventListener("popstate",function(e){			
-				
-				if(document.getElementById("container")) {
-					document.body.removeChild(document.getElementById("container"));
-				}
-				var index = -1;	
-				target = query();
+
+			var index = function() {
+				var tmp = -1;	
 				if(target) {
 					for(var k=0; k<list.length; k++) {
 						if(list[k].uid==target) {
-							index = k;
+							tmp = k;
 							break;
 						}
 					}
-				}				
-				if(index==-1) index = 0;
-				//console.log("popstate",list[index].uid);	
-				load("./date/"+list[index].uid+".json",render);
+				}
+				if(tmp==-1) tmp = 0;
+				return tmp;
+			}
+
+			window.addEventListener("popstate",function(e){			
+				if(document.getElementById("container")) {
+					document.body.removeChild(document.getElementById("container"));
+				}
+				target = query();
+				load("./date/"+list[index()].uid+".json",render);
 			});
-				
-				
+
 			var load = function(path,func) {				
 				var xhr = new XMLHttpRequest();
 				xhr.open("GET",path+"?t="+time,true);
-				xhr.timeout=10000;
+				xhr.timeout = 10000;
 				xhr.onreadystatechange = function() {
 					if(xhr.readyState==4) {
 						if(xhr.status==0||xhr.status==200) {
 							if(func) func(JSON.parse(xhr.responseText));
 						}
-					}					
+					}
 				};
 				xhr.send();
 			}
-			
+
 			var make = function(b) {
 				for(var k=0; k<b.length; k++) {
-					if(Array.isArray(b[k])) {						
+					if(Array.isArray(b[k])) {
 						b[k] = make(b[k]);
 					}
-				}				
-				if(b.length>0&&b[0]=="code") {
-					tmp = b[b.length-1];
-					if(typeof(tmp)==="string"&&tmp.length>1) {
-						b[b.length-1]=decodeURI(tmp);
+				}
+				if(b.length>0) {
+					if(b[0]=="code") {
+						tmp = b[b.length-1];
+						if(typeof(tmp)==="string"&&tmp.length>1) {
+							b[b.length-1]=decodeURI(tmp);
+						}
 					}
 				}
+				if(b.length>1) {
+					if(b[0]=="video") {
+						b[1].controls = true;
+						b[1].playsinline = true;
+						b[1].muted = true;
+						b[1].autoplay = true;
+						b[1].loop = true;
+					}
+				}					
 				return crel.apply({},b);				
 			}
-			
+
 			var render = function(block) {
-				
 				if(document.getElementById("container")) {
 					document.body.removeChild(document.getElementById("container"));
 				}
-				
-				container = crel("div",{"id":"container"})
+				var container = crel("div",{"id":"container"})
 				crel(document.body,container);				
-
 				if(Array.isArray(block)) {			
 					for(var k=0; k<block.length; k++) {
 						if(Array.isArray(block[k])) {						
@@ -231,41 +239,23 @@
 							
 						}
 					}
-				}	
-				
+				}
 				var archive = crel("div",{"id":"archive"});
 				crel(container,archive);
-				
 				var q = query();
-				
-				for(var k=0; k<list.length; k++) {
-					
+				for(var k=0; k<list.length; k++) {	
 					if(q!=list[k].uid) {
 						crel(archive,crel("a",{"href":"javascript:void(0);","onclick":"if(query()!=\""+list[k].uid+"\"){document.body.removeChild(document.getElementById(\"container\"));history.pushState(null,\"\",\"?uid="+list[k].uid+"\");load(\"./date/"+list[k].uid+".json"+"\",render);}"},list[k].uid));
 					}
-					
-					
-				}				
+				}
 			}
-			
-			
 
 			var initialize = function(data) {
 				list = data;
-				var index = -1;	
 				target = query();
-				if(target) {
-					for(var k=0; k<list.length; k++) {
-						if(list[k].uid==target) {
-							index = k;
-							break;
-						}
-					}
-				}				
-				if(index==-1) index = 0;
-				load("./date/"+list[index].uid+".json",render);
+				load("./date/"+list[index()].uid+".json",render);
 			}
-			
+
 			load("./index.json",initialize);
 		</script>
 	</body>
