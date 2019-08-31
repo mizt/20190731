@@ -121,19 +121,19 @@
 
 			code {
 				font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-				font-size:13px;
+				font-size:12px;
 				line-height:inherit;
 				color:#FFF;
 			}
 
 			p > code {
-				vertical-align:1px;
-				border-radius:2px;
-				padding:12px 16px;
 				background-color:#236;
-				padding:2px 3px 3px 4px;
-				margin:0 2px 0 0px;
+				padding:3px 3px 2px 4px;
+				margin:0 2px 0 0;
 				border-radius:2px;
+				line-height:12px;
+				vertical-align:1px;
+
 			}
 
 			.twitter-tweet {
@@ -247,7 +247,7 @@
 				var archive = crel("div",{"id":"archive"});
 				crel(container,archive);
 				var q = query();
-				for(var k=0; k<list.length; k++) {	
+				for(var k=(q)?0:1; k<list.length; k++) {	
 					if(q!=list[k].uid) {
 						crel(archive,crel("a",{"href":"javascript:void(0);","onclick":"if(query()!=\""+list[k].uid+"\"){document.body.removeChild(document.getElementById(\"container\"));history.pushState(null,\"\",\"?uid="+list[k].uid+"\");load(\"./date/"+list[k].uid+".json"+"\",render);}"},list[k].uid));
 					}
