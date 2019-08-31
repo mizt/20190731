@@ -1,6 +1,6 @@
 [
 	["p",{"class":"title"},"20190901"],
-	["p","不正なjpgをlibjpeg(-turbo)を使って読み込むと、ワーニングがコンソールに出てしまう。",["br"],"オプションとかで消すことができるかを調べたが、ソースコードを読む限り無理そうなのでjerror.cのワーニングを出力している箇所をコメントアウトして、ビルドし直す必要がありそうだ。"],
+	["p","不正なjpgをlibjpeg(-turbo)を使って読み込むと、ワーニングがコンソールに出てしまう。",["br"],"オプションとかで消すことができるかを調べたが、ソースコードを読む限り無理そうなのでjerror.cのワーニングを出力している箇所をコメントアウトして、ビルドする必要がある。"],
 	["pre",["code","METHODDEF(void)\noutput_message(j_common_ptr cinfo)\n{\n\tchar buffer[JMSG_LENGTH_MAX];\n\n\t/* Create the message */\n\t(*cinfo->err->format_message) (cinfo, buffer);\n\n#ifdef USE_WINDOWS_MESSAGEBOX\n\t/* Display it in a message dialog box */\n\tMessageBox(GetActiveWindow(), buffer, %22JPEG Library Error%22,\n\t\t\t\t\t\t MB_OK | MB_ICONERROR);\n#else\n\t/* Send it to stderr, adding a newline */\n\t//fprintf(stderr, %22%25s%5Cn%22, buffer);\n#endif\n}"]],
-	["p","ビルドは",["code","cmake -G%22Unix Makefiles%22"],"してから",["code","make"],"するとlibturbojpeg.aができる。",["br"],"Emscripteの場合は",["code","emcmake cmake -G%22Unix Makefiles%22 -DWITH_SIMD=0 -DENABLE_SHARED=0 -DCMAKE_C_FLAGS=%22-Wall -s WASM=0%22"],"してから",["code","emcmake make"],"。",["br"],".dylibのビルド方法がわからなかったので、ビルドされたオブジェクトファイル（.o）をそのままリンクした。これについては何とかしたい。"]
+	["p","ビルドは",["code","cmake -G%22Unix Makefiles%22"],"してから",["code","make"],"するとlibturbojpeg.aができる。",["br"],"Emscripteの場合は",["code","emcmake cmake -G%22Unix Makefiles%22 -DWITH_SIMD=0 -DENABLE_SHARED=0 -DCMAKE_C_FLAGS=%22-Wall -s WASM=0%22"],"してから",["code","emcmake make"],"。",["br"],".dylibのビルド方法がわからなかったので、ビルドされたオブジェクトファイル（.o）をそのままリンクした。",["br"],"これについては何とかしたい。"]
 ]
